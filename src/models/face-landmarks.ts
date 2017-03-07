@@ -1,4 +1,4 @@
-import Point = require('./coordinate');
+import Point = require('./point');
 
 /**
  * Model to define points of a face in an image

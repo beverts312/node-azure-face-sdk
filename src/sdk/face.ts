@@ -21,7 +21,7 @@ class FaceSdk extends SdkBase {
     }
 
     public group() {
-        // POST /group 
+        // POST /group
         throw new Error('Not Implimented');
     }
 

@@ -1,8 +1,7 @@
-# faces README
-
-
+# Node Azure Face SDK  
+Info coming soon!  
 
 Initially created by this [swell generator][parent-generator-url]!
 
-# This is a convenient way to manage links within markdown
+
 [parent-generator-url]: https://github.com/swellaby/generator-swell

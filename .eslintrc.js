@@ -38,10 +38,7 @@ module.exports = {
         'linebreak-style': [
             'off'
         ],
-        quotes: [
-            'error',
-            'single'
-        ],
+        quotes: 'off',
         semi: [
             'error',
             'always'
@@ -58,6 +55,7 @@ module.exports = {
                 'ignoreTopLevelFunctions': false
             }
         ],
+        "no-unused-vars": 'off',
         "require-yield": [
             'off'
         ],
