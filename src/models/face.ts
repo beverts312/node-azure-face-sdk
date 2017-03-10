@@ -10,9 +10,9 @@ import FaceAttributes = require('./face-attributes');
 interface Face {
     faceId: string;
     faceRectangle: Rectangle;
-    faceLandmarks: FaceLandmarks;
-    faceAttributes: FaceAttributes;
-    glasses: string;
-    headPose: Pose;
+    faceLandmarks?: FaceLandmarks;
+    faceAttributes?: FaceAttributes;
+    glasses?: string;
+    headPose?: Pose;
 }
 export = Face;

@@ -1,6 +1,8 @@
 import request = require('request');
+import util = require('util');
 
 import SdkBase = require('../base');
+import PersonGroup = require('../models/person');
 
 /**
  * SDK for the Azure Person Group API
@@ -8,9 +10,21 @@ import SdkBase = require('../base');
  */
 class PersonGroupSdk extends SdkBase {
 
-    public createGroup(personGroupId: string, name: string, data: string) {
+    public createGroup(personGroupId: string, name: string, data?: string): Promise<boolean> {
         // PUT /persongroups/{personGroupId}
-        throw new Error('Not Implimented');
+        const uri = util.format('%s/persongroups/%s', this.url, personGroupId);
+        const body: PersonGroup = { name: name };
+        return new Promise((resolve, reject) => {
+            request.put(uri, {
+                body: JSON.stringify(body),
+                headers: this.getJsonHeaders()
+            }, (err: Error, res: request.RequestResponse, data: PersonGroup) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(true);
+            });
+        });
     }
 
     public deleteGroup(personGroupId: string) {

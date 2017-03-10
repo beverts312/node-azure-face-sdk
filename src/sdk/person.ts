@@ -1,5 +1,7 @@
 import request = require('request');
 
+import util = require('util');
+
 import SdkBase = require('../base');
 
 import Rectangle = require('../models/rectangle');
@@ -13,13 +15,24 @@ import PersonFace = require('../models/person-face');
 class PersonSdk extends SdkBase {
 
     public addFace(personGroupId: string, personId: string, userData?: string, targetFace?: Rectangle) {
-        // POST /persongroups/{personGroupId}/persons/{personId}/persistedFaces[?userData][&targetFace]
         throw new Error('Not Implimented');
     }
 
-    public createPerson(personGroupId: string, name: string, userData?: string) {
-        // post /persongroups/{personGroupId}/persons
-        throw new Error('Not Implimented');
+    public createPerson(personGroupId: string, name: string, userData?: string): Promise<Person> {
+        const uri = util.format('%s/persongroups/%s/persons', this.url, personGroupId);
+        const body: Person = { name: name };
+        if (userData) {
+            body.userData = userData;
+        }
+        return new Promise((resolve, reject) => {
+            request.post(uri, { body: JSON.stringify(body), headers: this.getJsonHeaders() },
+                (err: Error, res: request.RequestResponse, data: string) => {
+                    if (err) {
+                        reject(err);
+                    }
+                    resolve(JSON.parse(data));
+                });
+        });
     }
 
     public deletePerson(personGroupId: string, personId: string) {

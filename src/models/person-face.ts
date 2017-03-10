@@ -3,7 +3,7 @@
  * @interface PersonFace
  */
 interface PersonFace {
-    persistedFaceId: string;
-    userData: string;
+    persistedFaceId?: string;
+    userData?: string;
 }
 export = PersonFace;

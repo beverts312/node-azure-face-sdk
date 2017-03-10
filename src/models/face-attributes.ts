@@ -5,9 +5,9 @@ import FaceHair = require('./face-hair');
  * @interface FaceAttributes
  */
 interface FaceAttributes {
-    age: number;
-    gender: string;
-    smile: number;
-    facialHair: FaceHair;
+    age?: number;
+    gender?: string;
+    smile?: number;
+    facialHair?: FaceHair;
 }
 export = FaceAttributes
