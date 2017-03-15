@@ -6,16 +6,16 @@ var unitTestCoverageDirectory = path.resolve('./coverage/unit/');
 var unitTestCoverageReportHtmlFile = path.resolve('./coverage/unit/index.html');
 
 // These values determine the aggregate coverage thresholds that are applied across the entire project.
-var unitTestGlobalStatementCoverageThreshold = 100;
-var unitTestGlobalBranchCoverageThreshold = 100;
-var unitTestGlobalLineCoverageThreshold = 100;
-var unitTestGlobalFunctionCoverageThreshold = 100;
+var unitTestGlobalStatementCoverageThreshold = 15;
+var unitTestGlobalBranchCoverageThreshold = 0;
+var unitTestGlobalLineCoverageThreshold = 15;
+var unitTestGlobalFunctionCoverageThreshold = 5;
 
 // These values determine the coverage thresholds that are applied to each file individually.
-var unitTestLocalStatementCoverageThreshold = 100;
-var unitTestLocalBranchCoverageThreshold = 100;
-var unitTestLocalLineCoverageThreshold = 100;
-var unitTestLocalFunctionCoverageThreshold = 100;
+var unitTestLocalStatementCoverageThreshold = 15;
+var unitTestLocalBranchCoverageThreshold = 0;
+var unitTestLocalLineCoverageThreshold = 15;
+var unitTestLocalFunctionCoverageThreshold = 5;
 
 var includeUntested = true;
 var reporters = ['html', 'lcov', 'cobertura', 'text', 'text-summary'];
