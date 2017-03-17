@@ -49,7 +49,7 @@ module.exports = {
         "max-statements": [
             'error',
             {
-                'max': 10
+                'max': 20
             },
             {
                 'ignoreTopLevelFunctions': false
