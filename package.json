@@ -1,21 +1,19 @@
 {
-  "name": "faces",
-  "description": "",
-  "version": "0.0.1",
+  "name": "azure-face-sdk",
+  "description": "Wrapper on the Azure Cognitive APIs for Facial Recognition",
+  "version": "0.0.1-alpha",
   "license": "",
-  "repository": {},
-  "author": {
-    "url": "",
-    "name": "",
-    "email": ""
+   "repository": {
+    "url": "https://github.com/beverts312/node-azure-face-sdk",
+    "type": "git"
   },
-  "contributors": [
-    {
-      "url": "",
-      "name": "",
-      "email": ""
-    }
-  ],
+  "author": {
+    "url": "https://blog.baileyeverts.com",
+    "name": "beverts312"
+  },
+  "bugs": {
+    "url": "https://github.com/beverts312/node-azure-face-sdk/issues"    
+  },
   "scripts": {
     "build": "gulp clean tslint transpile",
     "check-security": "gulp check-security",
