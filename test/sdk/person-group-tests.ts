@@ -125,4 +125,22 @@ suite('Person SDK Suite -', () => {
             });
         });
     });
+
+    suite('trainGroup Suite -', () => {
+        test('post called', (done: () => void) => {
+            postStub.yields(null, { statusCode: 200 } );
+            sut.trainGroup('').then((group) => {
+                assert.isTrue(postStub.calledOnce);
+                done();
+            });
+        });
+
+        test('handles error', (done: () => void) => {
+            postStub.yields(new Error('err'), { statusCode: 500 });
+            sut.trainGroup('').catch((err) => {
+                assert.isTrue(postStub.calledOnce);
+                done();
+            });
+        });
+    });
 });

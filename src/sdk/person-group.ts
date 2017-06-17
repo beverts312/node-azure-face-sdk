@@ -10,6 +10,14 @@ import PersonGroup = require('../models/person');
  */
 class PersonGroupSdk extends SdkBase {
 
+    /**
+     *
+     * @param {string} personGroupId
+     * @param {string} name
+     * @param {string} [data]
+     * @returns {Promise<boolean>}
+     * @memberOf PersonGroupSdk
+     */
     public createGroup(personGroupId: string, name: string, data?: string): Promise<boolean> {
         const uri = util.format('%s/persongroups/%s', this.url, personGroupId);
         const body: PersonGroup = { name: name };
@@ -26,6 +34,12 @@ class PersonGroupSdk extends SdkBase {
         });
     }
 
+    /**
+     *
+     * @param {string} personGroupId
+     * @returns {Promise<boolean>}
+     * @memberOf PersonGroupSdk
+     */
     public deleteGroup(personGroupId: string): Promise<boolean> {
         const uri = util.format('%s/persongroups/%s', this.url, personGroupId);
         return new Promise((resolve, reject) => {
@@ -38,6 +52,12 @@ class PersonGroupSdk extends SdkBase {
         });
     }
 
+    /**
+     *
+     * @param {string} personGroupId
+     * @returns {Promise<PersonGroup>}
+     * @memberOf PersonGroupSdk
+     */
     public getGroup(personGroupId: string): Promise<PersonGroup> {
         const uri = util.format('%s/persongroups/%s', this.url, personGroupId);
         return new Promise<PersonGroup>((resolve, reject) => {
@@ -50,6 +70,13 @@ class PersonGroupSdk extends SdkBase {
         });
     }
 
+    /**
+     *
+     * @param {string} [start]
+     * @param {number} [top]
+     * @returns {Promise<PersonGroup[]>}
+     * @memberOf PersonGroupSdk
+     */
     public listGroups(start?: string, top?: number): Promise<PersonGroup[]> {
         let uri = util.format('%s/persongroups', this.url);
         if (start) {
@@ -78,9 +105,22 @@ class PersonGroupSdk extends SdkBase {
         throw new Error('Not Implimented');
     }
 
-    public trainGroup(personGroupId: string) {
-        // post /persongroups/{personGroupId}/train
-        throw new Error('Not Implimented');
+    /**
+     *
+     * @param {string} personGroupId
+     * @returns {Promise<boolean>}
+     * @memberOf PersonGroupSdk
+     */
+    public trainGroup(personGroupId: string): Promise<boolean> {
+        const uri = util.format('%s/persongroups/%s/training', this.url, personGroupId);
+        return new Promise<boolean>((resolve, reject) => {
+            request.post(uri, { headers: this.getHeaders() }, (err: Error, res: request.RequestResponse, data: string) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(true);
+            });
+        });
     }
 }
 export = PersonGroupSdk;
