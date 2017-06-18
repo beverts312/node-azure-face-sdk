@@ -12,22 +12,22 @@ const opts: Opts = new Opts();
 suite('Index Suite -', () => {
 
     test('Loads Person', (done: () => void) => {
-        assert.isNotNull(new sut.Person(opts));
+        assert.isNotNull(new sut.PersonSdk(opts));
         done();
     });
 
     test('Loads Person Group', (done: () => void) => {
-        assert.isNotNull(new sut.PersonGroup(opts));
+        assert.isNotNull(new sut.PersonGroupSdk(opts));
         done();
     });
 
     test('Loads Face', (done: () => void) => {
-        assert.isNotNull(new sut.Face(opts));
+        assert.isNotNull(new sut.FaceSdk(opts));
         done();
     });
 
     test('Loads Face', (done: () => void) => {
-        assert.isNotNull(new sut.FaceList(opts));
+        assert.isNotNull(new sut.FaceListSdk(opts));
         done();
     });
 });
