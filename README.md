@@ -1,6 +1,8 @@
 # Node Azure Face SDK  
 Wrapper on the Azure Cognitive APIs for Facial Recognition ([official docs][azure-docs]).  
 
+If you are using typescript you will get docs inline.
+
 ## Usage  
 Install to your project `npm install azure-face-sdk --save`
 
@@ -10,18 +12,6 @@ There are two options:
 
  - version: Currently only 1.0 is supported
  - ocpApiKey: Retrieve your key from [here][cognitive-key]
-
-#### Person Group  
-In progress  
-
-#### Person 
-For now refere to [inline docs][person-sdk] 
-
-#### Face  
-Not implimented  
-
-#### Face List  
-Not Implimented
 
 ## Development  
 Coming soon  

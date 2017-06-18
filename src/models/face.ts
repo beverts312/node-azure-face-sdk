@@ -14,5 +14,15 @@ class Face {
     public faceAttributes?: FaceAttributes;
     public glasses?: string;
     public headPose?: Pose;
+
+    constructor(faceId: string, faceRectangle: Rectangle, faceLandmarks?: FaceLandmarks,
+        faceAttributes?: FaceAttributes, glasses?: string, headPose?: Pose) {
+        this.faceId = faceId;
+        this.faceRectangle = faceRectangle;
+        this.faceLandmarks = faceLandmarks;
+        this.faceAttributes = faceAttributes;
+        this.glasses = glasses;
+        this.headPose = headPose;
+    }
 }
 export = Face;

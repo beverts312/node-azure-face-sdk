@@ -21,7 +21,7 @@ suite('Person SDK Suite -', () => {
     let postStub: Sinon.SinonStub;
     let patchStub: Sinon.SinonStub;
     let deleteStub: Sinon.SinonStub;
-    const opts: Opts = new Opts();
+    const opts: Opts = new Opts('');
     const sut = new Face(opts);
 
     setup(() => {

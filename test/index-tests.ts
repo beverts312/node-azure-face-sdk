@@ -7,7 +7,7 @@ import sut = require('../src/index');
 import Opts = require('../src/models/sdk-opts');
 
 const assert = Chai.assert;
-const opts: Opts = new Opts();
+const opts: Opts = new Opts('');
 
 suite('Index Suite -', () => {
 
