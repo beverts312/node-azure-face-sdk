@@ -1,10 +1,10 @@
 /**
  * Describe this
- * @interface Pose
+ * @class Pose
  */
-interface Pose {
-    roll: number;
-    yaw: number;
-    pitch: number;
+class Pose {
+    public roll: number;
+    public yaw: number;
+    public pitch: number;
 }
 export = Pose;

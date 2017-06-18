@@ -1,10 +1,10 @@
 /**
  * Facial Hair Attributes
- * @interface FaceHair
+ * @class FaceHair
  */
-interface FaceHair {
-    mustache?: number;
-    beard?: number;
-    sideburns?: number;
+class FaceHair {
+    public mustache?: number;
+    public beard?: number;
+    public sideburns?: number;
 }
 export = FaceHair;

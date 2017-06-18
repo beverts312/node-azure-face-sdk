@@ -1,11 +1,11 @@
 /**
  * Person Model
- * @interface Person
+ * @class Person
  */
-interface Person {
-    personId?: string;
-    persistedFaceIds?: string[];
-    name?: string;
-    userData?: string;
+class Person {
+    public personId?: string;
+    public persistedFaceIds?: string[];
+    public name?: string;
+    public userData?: string;
 }
 export = Person;

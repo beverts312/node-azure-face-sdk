@@ -1,20 +1,20 @@
 /**
  * Coordinate on the XY plane
- * @interface Point
+ * @class Point
  */
-interface Point {
+class Point {
     /**
      * X Coordinate
      * @type {number}
      * @memberOf Point
      */
-    x: number;
+    public x: number;
 
     /**
      * Y Coordinate
      * @type {number}
      * @memberOf Point
      */
-    y: number;
+    public y: number;
 }
 export = Point;

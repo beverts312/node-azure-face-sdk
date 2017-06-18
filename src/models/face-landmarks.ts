@@ -2,35 +2,35 @@ import Point = require('./point');
 
 /**
  * Model to define points of a face in an image
- * @interface FaceLandmarks
+ * @class FaceLandmarks
  */
-interface FaceLandmarks {
-    pupilLeft: Point;
-    pupilRight: Point;
-    noseTip: Point;
-    mouthLeft: Point;
-    mouthRight: Point;
-    eyebrowLeftOuter: Point;
-    eyebrowLeftInner: Point;
-    eyeLeftOuter: Point;
-    eyeLeftTop: Point;
-    eyeLeftBottom: Point;
-    eyeLeftInner: Point;
-    eyebrowRightInner: Point;
-    eyebrowRightOuter: Point;
-    eyeRightInner: Point;
-    eyeRightTop: Point;
-    eyeRightBottom: Point;
-    eyeRightOuter: Point;
-    noseRootLeft: Point;
-    noseRootRight: Point;
-    noseLeftAlarTop: Point;
-    noseRightAlarTop: Point;
-    noseLeftAlarOutTip: Point;
-    noseRightAlarOutTip: Point;
-    upperLipTop: Point;
-    upperLipBottom: Point;
-    underLipTop: Point;
-    underLipBottom: Point;
+class FaceLandmarks {
+    public pupilLeft: Point;
+    public pupilRight: Point;
+    public noseTip: Point;
+    public mouthLeft: Point;
+    public mouthRight: Point;
+    public eyebrowLeftOuter: Point;
+    public eyebrowLeftInner: Point;
+    public eyeLeftOuter: Point;
+    public eyeLeftTop: Point;
+    public eyeLeftBottom: Point;
+    public eyeLeftInner: Point;
+    public eyebrowRightInner: Point;
+    public eyebrowRightOuter: Point;
+    public eyeRightInner: Point;
+    public eyeRightTop: Point;
+    public eyeRightBottom: Point;
+    public eyeRightOuter: Point;
+    public noseRootLeft: Point;
+    public noseRootRight: Point;
+    public noseLeftAlarTop: Point;
+    public noseRightAlarTop: Point;
+    public noseLeftAlarOutTip: Point;
+    public noseRightAlarOutTip: Point;
+    public upperLipTop: Point;
+    public upperLipBottom: Point;
+    public underLipTop: Point;
+    public underLipBottom: Point;
 }
 export = FaceLandmarks;

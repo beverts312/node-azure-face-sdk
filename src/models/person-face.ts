@@ -1,12 +1,12 @@
 /**
  * PersonFace Model
- * @interface PersonFace
+ * @class PersonFace
  */
-interface PersonFace {
-    persistedFaceId?: string;
-    faceId?: string;
-    userData?: string;
-    confidence?: number;
-    personId?: string;
+class PersonFace {
+    public persistedFaceId?: string;
+    public faceId?: string;
+    public userData?: string;
+    public confidence?: number;
+    public personId?: string;
 }
 export = PersonFace;

@@ -2,11 +2,11 @@ import PersonFace = require('./person-face');
 
 /**
  * Face List
- * @interface FaceList
+ * @class FaceList
  */
-interface FaceList {
-    name?: string;
-    userData?: string;
-    persistedFaces?: PersonFace[];
+class FaceList {
+    public name?: string;
+    public userData?: string;
+    public persistedFaces?: PersonFace[];
 }
 export = FaceList

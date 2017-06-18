@@ -1,10 +1,10 @@
 import PersonFace = require('./person-face');
 
 /**
- * @interface IdentifyRes
+ * @class IdentifyRes
  */
-interface IdentifyRes {
-    faceId?: string;
-    candidates?: PersonFace[];
+class IdentifyRes {
+    public faceId?: string;
+    public candidates?: PersonFace[];
 }
 export = PersonFace;

@@ -5,14 +5,14 @@ import FaceAttributes = require('./face-attributes');
 
 /**
  * Face Model
- * @interface Face
+ * @class Face
  */
-interface Face {
-    faceId: string;
-    faceRectangle: Rectangle;
-    faceLandmarks?: FaceLandmarks;
-    faceAttributes?: FaceAttributes;
-    glasses?: string;
-    headPose?: Pose;
+class Face {
+    public faceId: string;
+    public faceRectangle: Rectangle;
+    public faceLandmarks?: FaceLandmarks;
+    public faceAttributes?: FaceAttributes;
+    public glasses?: string;
+    public headPose?: Pose;
 }
 export = Face;

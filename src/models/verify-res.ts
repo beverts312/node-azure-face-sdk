@@ -1,8 +1,8 @@
 /**
- * @interface VerifyRes
+ * @class VerifyRes
  */
-interface VerifyRes {
-    isIdentical: boolean;
-    confidence: number;
+class VerifyRes {
+    public isIdentical: boolean;
+    public confidence: number;
 }
 export = VerifyRes;

@@ -2,12 +2,12 @@ import FaceHair = require('./face-hair');
 
 /**
  * Facial Attributes
- * @interface FaceAttributes
+ * @class FaceAttributes
  */
-interface FaceAttributes {
-    age?: number;
-    gender?: string;
-    smile?: number;
-    facialHair?: FaceHair;
+class FaceAttributes {
+    public age?: number;
+    public gender?: string;
+    public smile?: number;
+    public facialHair?: FaceHair;
 }
 export = FaceAttributes

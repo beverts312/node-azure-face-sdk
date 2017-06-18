@@ -1,9 +1,9 @@
 /**
  * Group of faces
- * @interface FaceGroups
+ * @class FaceGroups
  */
-interface FaceGroups {
-    groups?: string[];
-    messyGroup?: string;
+class FaceGroups {
+    public groups?: string[];
+    public messyGroup?: string;
 }
 export = FaceGroups;
