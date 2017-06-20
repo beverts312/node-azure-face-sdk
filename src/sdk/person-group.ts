@@ -25,9 +25,9 @@ class PersonGroupSdk extends SdkBase {
             request.put(uri, {
                 body: JSON.stringify(body),
                 headers: this.getJsonHeaders()
-            }, (err: Error, res: request.RequestResponse) => {
-                if (err) {
-                    reject(err);
+            }, (err: Error, res: request.RequestResponse, data: string) => {
+                if (res.statusCode !== 200) {
+                    reject(data);
                 }
                 resolve(true);
             });
@@ -43,9 +43,9 @@ class PersonGroupSdk extends SdkBase {
     public deleteGroup(personGroupId: string): Promise<boolean> {
         const uri = util.format('%s/persongroups/%s', this.url, personGroupId);
         return new Promise((resolve, reject) => {
-            request.delete(uri, { headers: this.getHeaders() }, (err: Error, res: request.RequestResponse) => {
-                if (err) {
-                    reject(err);
+            request.delete(uri, { headers: this.getHeaders() }, (err: Error, res: request.RequestResponse, data: string) => {
+                if (res.statusCode !== 200) {
+                    reject(data);
                 }
                 resolve(true);
             });
@@ -62,8 +62,8 @@ class PersonGroupSdk extends SdkBase {
         const uri = util.format('%s/persongroups/%s', this.url, personGroupId);
         return new Promise<PersonGroup>((resolve, reject) => {
             request.get(uri, { headers: this.getHeaders() }, (err: Error, res: request.RequestResponse, data: string) => {
-                if (err) {
-                    reject(err);
+                if (res.statusCode !== 200) {
+                    reject(data);
                 }
                 resolve(JSON.parse(data));
             });
@@ -87,8 +87,8 @@ class PersonGroupSdk extends SdkBase {
         }
         return new Promise<PersonGroup[]>((resolve, reject) => {
             request.get(uri, { headers: this.getHeaders() }, (err: Error, res: request.RequestResponse, data: string) => {
-                if (err) {
-                    reject(err);
+                if (res.statusCode !== 200) {
+                    reject(data);
                 }
                 resolve(JSON.parse(data));
             });
@@ -115,8 +115,8 @@ class PersonGroupSdk extends SdkBase {
         const uri = util.format('%s/persongroups/%s/training', this.url, personGroupId);
         return new Promise<boolean>((resolve, reject) => {
             request.post(uri, { headers: this.getHeaders() }, (err: Error, res: request.RequestResponse, data: string) => {
-                if (err) {
-                    reject(err);
+                if (res.statusCode !== 200) {
+                    reject(data);
                 }
                 resolve(true);
             });
