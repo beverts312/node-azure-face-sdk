@@ -24,12 +24,12 @@ class FaceSdk extends SdkBase {
      * @memberOf FaceSdk
      */
     public detectFromUrl(url: string, returnId: boolean = true, returnFaceLandmarks?: boolean, returnAttrs?: string): Promise<Face[]> {
-        let uri = util.format('%s/detect?', this.url, returnId);
+        let uri = util.format('%s/detect?returnFaceId=%s', this.url, returnId);
         if (returnFaceLandmarks) {
-            uri += '&' + returnFaceLandmarks;
+            uri += '&returnFaceLandmarks=' + returnFaceLandmarks;
         }
         if (returnAttrs) {
-            uri += '&' + returnAttrs;
+            uri += '&returnFaceAttributes=' + returnAttrs;
         }
         const body = { url: url };
         return new Promise<Face[]>((resolve, reject) => {
