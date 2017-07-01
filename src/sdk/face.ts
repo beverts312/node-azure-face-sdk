@@ -24,19 +24,19 @@ class FaceSdk extends SdkBase {
      * @memberOf FaceSdk
      */
     public detectFromUrl(url: string, returnId: boolean = true, returnFaceLandmarks?: boolean, returnAttrs?: string): Promise<Face[]> {
-        let uri = util.format('%s/detect?', this.url, returnId);
+        let uri = util.format('%s/detect?returnFaceId=%s', this.url, returnId);
         if (returnFaceLandmarks) {
-            uri += '&' + returnFaceLandmarks;
+            uri += '&returnFaceLandmarks=' + returnFaceLandmarks;
         }
         if (returnAttrs) {
-            uri += '&' + returnAttrs;
+            uri += '&returnFaceAttributes=' + returnAttrs;
         }
         const body = { url: url };
         return new Promise<Face[]>((resolve, reject) => {
             request.post(uri, { headers: this.getJsonHeaders(), body: body },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });
@@ -75,8 +75,8 @@ class FaceSdk extends SdkBase {
         return new Promise<Face[]>((resolve, reject) => {
             request.post(uri, { headers: this.getJsonHeaders(), body: body },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });
@@ -95,8 +95,8 @@ class FaceSdk extends SdkBase {
         return new Promise<FaceGroups>((resolve, reject) => {
             request.post(uri, { headers: this.getJsonHeaders(), body: body },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });
@@ -129,8 +129,8 @@ class FaceSdk extends SdkBase {
         return new Promise<IdentifyRes[]>((resolve, reject) => {
             request.post(uri, { headers: this.getJsonHeaders(), body: body },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });
@@ -147,8 +147,8 @@ class FaceSdk extends SdkBase {
         return new Promise<VerifyRes>((resolve, reject) => {
             request.post(uri, { headers: this.getJsonHeaders(), body: body },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });
@@ -164,8 +164,8 @@ class FaceSdk extends SdkBase {
         return new Promise<VerifyRes>((resolve, reject) => {
             request.post(uri, { headers: this.getJsonHeaders(), body: body },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });

@@ -35,9 +35,9 @@ class FaceListSdk extends SdkBase {
             request.post(uri, {
                 body: JSON.stringify(body),
                 headers: this.getJsonHeaders()
-            }, (err: Error, res: request.RequestResponse) => {
-                if (err) {
-                    reject(err);
+            }, (err: Error, res: request.RequestResponse, data: string) => {
+                if (res.statusCode !== 200) {
+                    reject(data);
                 }
                 resolve(true);
             });
@@ -60,9 +60,9 @@ class FaceListSdk extends SdkBase {
             request.put(uri, {
                 body: JSON.stringify(body),
                 headers: this.getJsonHeaders()
-            }, (err: Error, res: request.RequestResponse) => {
-                if (err) {
-                    reject(err);
+            }, (err: Error, res: request.RequestResponse, data: string) => {
+                if (res.statusCode !== 200) {
+                    reject(data);
                 }
                 resolve(true);
             });
@@ -83,9 +83,9 @@ class FaceListSdk extends SdkBase {
         return new Promise<boolean>((resolve, reject) => {
             request.delete(uri, {
                 headers: this.getHeaders()
-            }, (err: Error, res: request.RequestResponse) => {
-                if (err) {
-                    reject(err);
+            }, (err: Error, res: request.RequestResponse, data: string) => {
+                if (res.statusCode !== 200) {
+                    reject(data);
                 }
                 resolve(true);
             });
@@ -105,9 +105,9 @@ class FaceListSdk extends SdkBase {
         return new Promise<boolean>((resolve, reject) => {
             request.delete(uri, {
                 headers: this.getHeaders()
-            }, (err: Error, res: request.RequestResponse) => {
-                if (err) {
-                    reject(err);
+            }, (err: Error, res: request.RequestResponse, data: string) => {
+                if (res.statusCode !== 200) {
+                    reject(data);
                 }
                 resolve(true);
             });
@@ -128,8 +128,8 @@ class FaceListSdk extends SdkBase {
             request.get(uri, {
                 headers: this.getHeaders()
             }, (err: Error, res: request.RequestResponse, body) => {
-                if (err) {
-                    reject(err);
+                if (res.statusCode !== 200) {
+                    reject(body);
                 }
                 resolve(body);
             });
@@ -149,8 +149,8 @@ class FaceListSdk extends SdkBase {
             request.get(uri, {
                 headers: this.getHeaders()
             }, (err: Error, res: request.RequestResponse, body) => {
-                if (err) {
-                    reject(err);
+                if (res.statusCode !== 200) {
+                    reject(body);
                 }
                 resolve(body);
             });
@@ -176,9 +176,9 @@ class FaceListSdk extends SdkBase {
             request.patch(uri, {
                 headers: this.getJsonHeaders(),
                 body: JSON.stringify(body)
-            }, (err: Error, res: request.RequestResponse) => {
-                if (err) {
-                    reject(err);
+            }, (err: Error, res: request.RequestResponse, data: string) => {
+                if (res.statusCode !== 200) {
+                    reject(data);
                 }
                 resolve(true);
             });

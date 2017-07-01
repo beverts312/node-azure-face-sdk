@@ -1,7 +1,7 @@
 {
   "name": "azure-face-sdk",
   "description": "Wrapper on the Azure Cognitive APIs for Facial Recognition",
-  "version": "0.0.6-alpha",
+  "version": "0.0.7-alpha",
   "main": "src/index.js",
   "typings": "./src/index",
   "license": "",

@@ -33,8 +33,8 @@ class PersonSdk extends SdkBase {
         return new Promise<PersonFace>((resolve, reject) => {
             request.post(uri, { body: JSON.stringify(body), headers: this.getJsonHeaders() },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });
@@ -59,8 +59,8 @@ class PersonSdk extends SdkBase {
         return new Promise((resolve, reject) => {
             request.post(uri, { body: JSON.stringify(body), headers: this.getJsonHeaders() },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });
@@ -80,8 +80,8 @@ class PersonSdk extends SdkBase {
         return new Promise<boolean>((resolve, reject) => {
             request.delete(uri, { headers: this.getHeaders() },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(true);
                 });
@@ -102,8 +102,8 @@ class PersonSdk extends SdkBase {
         return new Promise<boolean>((resolve, reject) => {
             request.delete(uri, { headers: this.getHeaders() },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(true);
                 });
@@ -123,8 +123,8 @@ class PersonSdk extends SdkBase {
         return new Promise<Person>((resolve, reject) => {
             request.get(uri, { headers: this.getHeaders() },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });
@@ -145,8 +145,8 @@ class PersonSdk extends SdkBase {
         return new Promise<PersonFace>((resolve, reject) => {
             request.get(uri, { headers: this.getHeaders() },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });
@@ -165,8 +165,8 @@ class PersonSdk extends SdkBase {
         return new Promise<Person[]>((resolve, reject) => {
             request.get(uri, { headers: this.getHeaders() },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(JSON.parse(data));
                 });
@@ -189,8 +189,8 @@ class PersonSdk extends SdkBase {
         return new Promise<boolean>((resolve, reject) => {
             request.patch(uri, { headers: this.getJsonHeaders(), body: JSON.stringify(body) },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(true);
                 });
@@ -213,8 +213,8 @@ class PersonSdk extends SdkBase {
         return new Promise<boolean>((resolve, reject) => {
             request.patch(uri, { headers: this.getJsonHeaders(), body: JSON.stringify(body) },
                 (err: Error, res: request.RequestResponse, data: string) => {
-                    if (err) {
-                        reject(err);
+                    if (res.statusCode !== 200) {
+                        reject(data);
                     }
                     resolve(true);
                 });
