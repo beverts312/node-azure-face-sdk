@@ -15,6 +15,7 @@ There are two options:
 
 ## Development  
 Coming soon  
+PR's checked with [VSTS][vsts].
 
 Initially created by this [swell generator][parent-generator-url]!
 
@@ -23,5 +24,5 @@ Initially created by this [swell generator][parent-generator-url]!
 [sdk-opts]: ./src/models/sdk-opts.ts  
 [cognitive-key]: https://www.microsoft.com/cognitive-services/en-US/subscriptions
 [person-sdk]: ./src/sdk/person.ts
-
+[vsts]: https://www.visualstudio.com/team-services/
 [parent-generator-url]: https://github.com/swellaby/generator-swell
